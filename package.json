@@ -1,0 +1,13 @@
+{
+  "name": "project-setup-skill",
+  "version": "1.0.0",
+  "description": "Installable agent skill: a consistent engineering standard for setting up any project.",
+  "type": "module",
+  "bin": { "project-setup-skill": "bin/cli.js" },
+  "files": ["bin", "skill", "README.md", "LICENSE", "CHANGELOG.md"],
+  "engines": { "node": ">=18" },
+  "keywords": ["claude", "skill", "agent-skill", "project-setup", "scaffold", "agents-md"],
+  "author": "Awe Oluwatimileyin",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/CodeATM/project-setup-skill.git" }
+}

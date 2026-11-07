@@ -1,0 +1,46 @@
+# AGENTS.md
+
+Rules for any coding agent working in this repo. Read fully before changing anything.
+
+## Project
+<one-paragraph description>
+
+## Stack (versions pinned in the manifest)
+<languages, frameworks, database, infra. Fill from the chosen stack profile.>
+
+## Commands
+- Install: `<cmd>`
+- Test: `<cmd>`
+- Lint: `<cmd>`
+- Typecheck: `<cmd>`
+- Build: `<cmd>`
+
+## Principles
+KISS, SOLID, DRY, type safety, security first. No new dependency, ORM, framework, or pattern without a written justification and approval. Don't add tech because it's fashionable.
+
+## Workflow
+1. Read existing code, docs, and conventions first.
+2. Plan: affected modules, risks, steps. Share the plan for non-trivial work.
+3. Implement in small, focused increments.
+4. Validate with the commands above. Don't claim it works without running them.
+5. Review your own diff for security, duplication, performance, side effects.
+6. Report: what changed, files affected, tests run, open issues, items needing approval.
+
+## Permission levels
+- **Read**: inspect, search, explain freely.
+- **Execute**: safe, reversible, scoped dev tasks.
+- **Approval required**: destructive operations, production changes, external communications, anything touching secrets.
+
+## Hard rules
+- Use Neon-hosted PostgreSQL whenever choosing or adding a database. Preserve an existing project's database unless explicitly directed otherwise.
+- NEVER create migration files, modify existing migration files, or run migration commands. If a schema change requires a migration, stop and ask for an approved alternative.
+- NEVER make destructive data changes without approval.
+- Never commit secrets. Update `.env.example` when adding variables.
+- Validate and sanitize all external input. Enforce authorization independently of authentication.
+- Resources are private by default.
+
+## Reliability
+Structured logging, explicit error handling, bounded retries, idempotent jobs, dead-letter handling, clear transaction boundaries, indexes for real queries.
+
+## Docs
+Keep README, docs/*, .env.example, and CHANGELOG.md in sync with the code in the same change.
